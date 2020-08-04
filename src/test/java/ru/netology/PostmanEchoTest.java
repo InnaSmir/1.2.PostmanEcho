@@ -10,13 +10,13 @@ public class PostmanEchoTest {
     void shouldPostTestRequest() {
         given()
                 .baseUri("https://postman-echo.com")
-                .contentType("text/plain; charset=UTF-8")
+                .contentType("text/plain")
                 .body("Test request")
                 .when()
                 .post("/post")
                 .then()
                 .statusCode(200)
-                .body("data", equalTo("Test request"))
+                .body("data", equalTo("Тест"))
         ;
     }
 }
